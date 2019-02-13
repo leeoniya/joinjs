@@ -7,4 +7,4 @@ class Security {
     }
 }
 
-export default Security;
+module.exports = Security;

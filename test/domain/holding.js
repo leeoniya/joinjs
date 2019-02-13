@@ -8,4 +8,4 @@ class Holding {
     }
 }
 
-export default Holding;
+module.exports = Holding;

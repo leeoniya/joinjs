@@ -1,8 +1,8 @@
-import Country from './country';
-import Fund from './fund';
-import Holding from './holding';
-import Security from './security';
-import User from './user';
+const Country = require('./country');
+const Fund = require('./fund');
+const Holding = require('./holding');
+const Security = require('./security');
+const User = require('./user');
 
 const domain = {
     Country: Country,
@@ -12,4 +12,4 @@ const domain = {
     User: User
 };
 
-export default domain;
+module.exports = domain;

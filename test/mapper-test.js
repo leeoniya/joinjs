@@ -1,8 +1,8 @@
-import { assert, expect } from 'chai';
+const { assert, expect } = require('chai');
 
-import joinjs from '../src';
-import domainMaps from './maps/domain-maps';
-import testMaps from './maps/test-maps';
+const joinjs = require('../dist/index');
+const domainMaps = require('./maps/domain-maps');
+const testMaps = require('./maps/test-maps');
 
 describe('Mapper', () => {
     it('should work when idProperty is not specified', () => {

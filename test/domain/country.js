@@ -6,4 +6,4 @@ class Country {
     }
 }
 
-export default Country;
+module.exports = Country;

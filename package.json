@@ -15,68 +15,17 @@
     "LICENSE"
   ],
   "scripts": {
-    "lint": "eslint '{src,test}/**/*.js'",
-    "prebuild": "del-cli dist",
-    "build": "babel src -d dist",
-    "test": "mocha --require babel-register",
-    "test:prod": "npm run lint && npm run coverage",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha --require babel-register",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "docs": "jsdoc src -d apidocs"
+    "build": "rollup -c",
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-summary --reporter=text > ./test/coverage.txt"
   },
-  "dependencies": {
-    "lodash": "^4.17.11"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^7.2.1",
-    "@commitlint/config-conventional": "^7.1.2",
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^10.0.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
-    "commitizen": "^3.0.2",
-    "coveralls": "^3.0.2",
-    "cz-conventional-changelog": "^2.1.0",
-    "del-cli": "^1.1.0",
-    "eslint": "^5.7.0",
-    "husky": "^1.1.2",
-    "jsdoc": "^3.4.0",
-    "marked": "^0.5.1",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
-    "semantic-release": "^15.10.3"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "release": {
-    "analyzeCommits": {
-      "preset": "angular",
-      "releaseRules": [
-        {
-          "type": "docs",
-          "scope": "README",
-          "release": "patch"
-        },
-        {
-          "type": "refactor",
-          "release": "patch"
-        },
-        {
-          "type": "style",
-          "release": "patch"
-        }
-      ]
-    }
+    "rollup": "^1.1.2",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-terser": "^4.0.4"
   }
 }

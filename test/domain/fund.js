@@ -6,4 +6,4 @@ class Fund {
     }
 }
 
-export default Fund;
+module.exports = Fund;

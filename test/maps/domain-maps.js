@@ -1,4 +1,4 @@
-import domain from '../domain';
+const domain = require('../domain');
 
 let domainMaps = [
     {
@@ -58,4 +58,4 @@ let domainMaps = [
     }
 ];
 
-export default domainMaps;
+module.exports = domainMaps;

@@ -176,4 +176,4 @@ let testMaps = [
     }
 ];
 
-export default testMaps;
+module.exports = testMaps;
